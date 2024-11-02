@@ -1,15 +1,28 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { useState } from "react";
 import ToDoList from "./ToDoList";
-import ToDoForm from "./ToDoForm";
 
-const App = () => {
+export default function App() {
+  const [tasks, setTasks] = useState(["Do laundry", "Go to gym", "Walk dog"]);
   return (
-    <View>
-      <ToDoList />
-      <ToDoForm />
-    </View>
-  ); 
-};
+    <div>
+      <h1>My Tasks</h1>
+      <ToDoList tasks={tasks} />
+    </div>
+  );
+}
 
-export default App;
+// import { View, Text } from "react-native";
+// import React from "react";
+// import ToDoList from "./ToDoList";
+// import ToDoForm from "./ToDoForm";
+
+// const App = () => {
+//   return (
+//     <View>
+//       <ToDoList />
+//       <ToDoForm />
+//     </View>
+//   );
+// };
+
+// export default App;
